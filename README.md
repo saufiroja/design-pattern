@@ -5,10 +5,14 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
 ## Daftar Isi
 
 - INTRODUCTION OOP
-  - [Basic Of OOP](./oop/README.md)
+  - [Basic Of OOP](./oop/README.md#basic-of-oop)
     - [Object, Class](./oop/README.md#object-class)
     - [Class hierarchies](./oop/README.md#class-hierarchies)
   - [Pillars of OOP](./oop/README.md#pillars-of-oop)
+    - [Abstraction](./oop/README.md#abstraction)
+    - [Encapsulation](./oop/README.md#encapsulation)
+    - [Inheritance](./oop/README.md#inheritance)
+    - [Polymorphism](./oop/README.md#polymorphism)
   - Relationship Between Objects
 - INTRODUCTION DESIGN PATTERNS
   - What is Design Patterns?
