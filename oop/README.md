@@ -141,6 +141,43 @@ Pilar Dasar dari OOP adalah:
 
 ### Inheritance
 
+- Inheritance adalah kemampuan untuk membangun sebuah class dari class yang sudah ada. Manfaat utama dari inheritance adalah reusability.
+  Jika kamu ingin membuat sebuah class yang sedikit berbeda dari class yang sudah ada, kamu dapat mewarisi class yang sudah ada dan menambahkan atribut dan method yang kamu butuhkan. </br>
+- Konsekuensi dari penggunaan inheritance adalah subclass memiliki interface yang sama dengan superclass. Kamu tidak bisa menyembunyikan method yang sudah ada di superclass.
+  Kamu hanya bisa menambahkan method baru di subclass. Kamu juga harus mengimplementasikan semua method abstract, meskipun method tersebut tidak relevan dengan subclass. </br>
+- Contoh:
+  - Animal (superclass)
+    - Cat (inheritance from Animal)
+      - FourLegged (inheritance from Cat)
+        - (+)run(destination)
+      - OxygenBreather (inheritance from Cat)
+        - (+)breath()
+- Kebanyakan dari bahasa pemrograman, sebuah subclass hanya dapat extend dari satu superclass.
+  Di sisi lain, setiap class dapat mengimplementasikan beberapa interface secara bersamaan.
+  Tetapi seperti yang disebutkan sebelumnya, jika superclass mengimplementasikan sebuah interface, maka subclass juga akan mengimplementasikan interface tersebut. </br>
+
 ### Polymorphism
+
+- Mari kita lihat beberapa contoh `Hewan`. sebagian besar `Hewan` dapat mengeluarkan suara. Kita bisa mengantisipasi bahwa semua subclass perlu override method `makeSound()`.
+  Sehingga setiap subclass dapat mengeluarkan suara yang benar. Oleh karena itu, kita dapat mendeklarasikan secara `Abstract` langsung.
+  Hal ini memungkinkan kita untuk menghilangkan implementasi default dari method di superclass, tetapi memaksa semua subclass untuk membuat dengan method sendiri. </br>
+- Contoh :
+
+  | Class Name |             Description             |
+  | :--------: | :---------------------------------: |
+  |   Animal   | (+) makeSound() --> Abstract Method |
+  |    Cat     | (+) makeSound() --> Override Method |
+  |    Dog     | (+) makeSound() --> Override Method |
+
+- Bayangkan kita memasukkan beberapa `cat` dan `dog` kedalam sebuat tas besar. Kemudian, dengan mata tertutup, kita mengeluarkan hewan-hewan itu satu per satu dari dalam tas.
+  Setelah mengeluarkan seekor hewan dari dalam tas, kita tidak tahu pasti hewan apa itu.
+  Namun, ketika kita memeluknya dengan keras, hewan itu mengeluarkan suara. Dari suara itu, kita dapat mengidentifikasi hewan itu adalah `cat` atau `dog`.
+- Program tidak mengetahui hewan apa yang akan keluar dari tas, tetapi berkat mekanisme khusus yang disebut `polymorphism`,
+  program dapat memanggil method `makeSound()` tanpa mengetahui tipe hewan apa yang akan keluar dari tas. </br>
+- Polymorphism adalah kemampuan sebuah program untuk mendeteksi class dari sebuah object dan memanggil implementasinya bahkan ketika tipe object tidak diketahui
+  pada saat kompilasi. </br>
+- Kamu juga dapat menganggap `polymorphism` sebagai kemampuan object untuk berpura-pura menjadi sesuatu yang lain.
+  Biasanya class yang diperluas atau interface yang diimplementasikan.
+  Dalam contoh diatas, object `cat` berpura-pura menjadi `Animal` ketika kamu memanggil method `makeSound()`. </br>
 
 ## Relationship Between Objects
