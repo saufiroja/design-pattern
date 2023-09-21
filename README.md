@@ -4,7 +4,7 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
 
 ## Daftar Isi
 
-- INTRODUCTION OOP
+- [INTRODUCTION OOP](./oop/README.md#introduction-oop)
   - [Basic Of OOP](./oop/README.md#basic-of-oop)
     - [Object, Class](./oop/README.md#object-class)
     - [Class hierarchies](./oop/README.md#class-hierarchies)
@@ -13,7 +13,7 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
     - [Encapsulation](./oop/README.md#encapsulation)
     - [Inheritance](./oop/README.md#inheritance)
     - [Polymorphism](./oop/README.md#polymorphism)
-  - Relationship Between Objects
+  - [Relationship Between Objects](./oop/README.md#relationship-between-objects)
     - [Dependency](./oop/README.md#dependency)
     - [Association](./oop/README.md#association)
     - [Aggregation](./oop/README.md#aggregation)
