@@ -258,7 +258,7 @@ UML composition, University terdiri dari Departement </br>
   Contoh yang paling terkenal untuk hal ini adalah prinsip yang terkenal `choose composition over inheritance.`
   Ini bukan karena orang-orang tidak tahu perbedaannyam, melainkan karena kata `composition` (contohnya, `object composition`) lebih umum digunakan daripada `aggregation`.
 
-### Conclusion
+## Conclusion
 
 Sekarang setelah mengetahui semua jenis hubungan antar object, mari kita lihat bagaimana mereka semua terhubung.
 Semoga, ini akan membantu kamu untuk melalui pertanyaan-pertanyaan seperti

@@ -18,6 +18,7 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
     - [Association](./oop/README.md#association)
     - [Aggregation](./oop/README.md#aggregation)
     - [Composition](./oop/README.md#composition)
+  - [Conclusion](./oop/README.md#conclusion)
 - INTRODUCTION DESIGN PATTERNS
   - What is Design Patterns?
   - Why i should learn Design Patterns?
