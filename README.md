@@ -14,6 +14,10 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
     - [Inheritance](./oop/README.md#inheritance)
     - [Polymorphism](./oop/README.md#polymorphism)
   - Relationship Between Objects
+    - [Dependency](./oop/README.md#dependency)
+    - [Association](./oop/README.md#association)
+    - [Aggregation](./oop/README.md#aggregation)
+    - [Composition](./oop/README.md#composition)
 - INTRODUCTION DESIGN PATTERNS
   - What is Design Patterns?
   - Why i should learn Design Patterns?

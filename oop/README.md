@@ -181,3 +181,95 @@ Pilar Dasar dari OOP adalah:
   Dalam contoh diatas, object `cat` berpura-pura menjadi `Animal` ketika kamu memanggil method `makeSound()`. </br>
 
 ## Relationship Between Objects
+
+Selain inheritance, ada beberapa jenis relasi antara object lainnya. </br>
+
+### Dependency
+
+`Professor -----> Course` </br>
+UML dependency, Profesor depands kepada course, karena dia mengajar course tersebut. </br>
+
+- Dependency adalah jenis relasi yang paling dasar dan paling lemah antar class.
+  Ada dependency antara 2 class, jika ada beberapa perubahan pada definisi 1 class dapat mengakibatkan perubahan pada definisi class lainnya.
+  Dependency biasanya terjadi ketika kamu menggunakan nama class yang konkrit dalam code kamu.
+  Sebagai contoh, ketika menentukan tipe dalam signature method, ketika menginisialisasi object melalui constructor, dll.
+  Kamu bisa membuat dependency menjadi lebih lemah, jika kamu membuat code kamu bergantung pada interface, bukan class konkrit. </br>
+- Biasanya, UML diagram tidak menunjukkan semua depedency ada terlalu banyak depedency dalam real code.
+  Alih-alih mengotori diagram dengan depedency, kamu harus sangat selektif dan hanya menunjukkan depedency yang penting. </br>
+
+### Association
+
+`Professor -----> Student` </br>
+UML association, Professor komunikasi dengan student </br>
+
+- Association adalah hubungan dimana 1 object digunakan atau berinteraksi dengan object lainnya.
+  Dalam diagram UML, hubungan association ditunjukkan dengan panah sederhana yang ditunjukkan dari object dan menunjuk ke object yang digunakan.
+  Ngomong-ngomong, memiliki association 2 arah adalah hal yang normal.
+  Dalam kasus ini, panah memiliki titik di setiap ujungnya.
+  Association dapat dilihat sebagai jenis depedency khusus, dimana object selalu memiliki akses ke object yang berinteraksi dengannya.
+  Sedangkan depedency sederhana, tidak membuat hubungan permanen antara object. </br>
+- Pada umumnya, kamu menggunakan association untuk merepresentasikan sebuah field yang berisi beberapa object lain.
+  Field ini berfungsi sebagai penghubung antar 2 object.
+  Tapi, tidak selalu harus berupa field. Association juga dapat direpresentasikan dengan method yang ngereturn beberapa object.
+  Jika tidak, maka tidak mungkin menggunakan association antar interface(karena interface tidak memiliki field). </br>
+- Untuk membuat pemahaman kamu tentang perbedaaan association dan depedency, mari kita lihat contoh berikut.
+  ```cs
+    public class Professor
+    {
+      private Student student;
+      // ...
+      public void Teach(Course c)
+      {
+          // ...
+          this.student.Remember(c.GetKnowledge());
+      }
+    }
+  ```
+- Lihat method `Teach()`, dia memiliki parameter dari class `Course`, kemudian digunakan didalam body method.
+  Jika seseorang mengubah signature method `GetKnowledge()` code kita akan rusak.
+  Itulah mengapa kita bisa mengatakan bahwa class `Professor` memiliki depedency pada class `Course`.
+- Sekarang, lihatlah field `student` dan bagaimana field tersebut digunakan dalam method.
+  Kita dapat mengatakan dengan pasti bahwa class `Student` adalah sebuah depedency lain untuk `Professor`.
+  Jika signature dari method berubah, maka code `Professor` akan rusak.
+  Namun, karena field `student` selalu dapat diakses oleh method apapun dari class `Professor`, class `Student` bukan hanya sebuah depedency, tetapi juga sebuah association. </br>
+
+### Aggregation
+
+`Departement -----> Professor` </br>
+UML aggregation, Departement berisi Professor </br>
+
+- Aggregation adalah jenis association khusus yang mewakili `one-to-many`, `many-to-many`, atau `whole-part` antar beberapa object.
+- Biasanya, Under aggregation, sebuah obejct memiliki kumpulan object lain dan berfungsi sebagai `container` or `collection`.
+  Komponen dapat ada tanpa `container` dan dapat dihubungkan ke beberapa `container` pada saat bersamaan.
+  Dalam UML, hubungan dengan aggregation ditunjukkan oleh garis dengan berlian kosong dibagian ujung `container` dan panah diujungnya yang mengarah ke komponen.
+- Ketika berbicara mengenai relasi antar object, perlu diingat bahwa UML merepresentasikan relasi antar class.
+  Ini artinya bahwa sebuah object `University` mungkin terdiri dari beberapa `Departement` bahkan meskipun kamu hanya memiliki 1 blok untuk setiap entity dalam diagram.
+  Notasi UML dapat merepresentasikan jumlah dikedua sisi hubungan, tetapi tidak apa-apa untuk menghilangkannya jika jumlahnya jelas dari konteks. </br>
+
+### Composition
+
+`University -----> Departement` </br>
+UML composition, University terdiri dari Departement </br>
+
+- Composition adalah jenis aggregation tertentu, dimana 1 obejct terdiri dari 1 atau lebih object lainnya.
+  Perbedaan antara relasi ini dengan yang lain adalah bahwa komponen hanya bisa ada sebagai dari `container`.
+  Dalam UML, hubungan komposisi digambar sama dengan aggregation, tetapi dengan berlian yang terisi di ujung panah.
+- Perhatikan, bahwa banyak orang sering menggunakan istilah `composition` apabila yang dimaksud adalah `Aggregation` dan `Composition`.
+  Contoh yang paling terkenal untuk hal ini adalah prinsip yang terkenal `choose composition over inheritance.`
+  Ini bukan karena orang-orang tidak tahu perbedaannyam, melainkan karena kata `composition` (contohnya, `object composition`) lebih umum digunakan daripada `aggregation`.
+
+### Conclusion
+
+Sekarang setelah mengetahui semua jenis hubungan antar object, mari kita lihat bagaimana mereka semua terhubung.
+Semoga, ini akan membantu kamu untuk melalui pertanyaan-pertanyaan seperti
+`apa perbedaan antara aggregation dan composition?` atau `Aoakah inheritance merupakan jenis depedency?`.
+
+- <b>Depedency</b>: `Class A` dapat terpengaruh oleh perubahan pada `class B`.</br>
+- <b>Association</b>: `Object A` tahu tentang `Object B`. `Class A` depands pada `class B`.</br>
+- <b>Aggregation</b>: `Object A` tahu tentang `Object B`, terdiri dari `Object B`. `Class A` depands pada `class B`.
+- <b>Composition</b>: `Object A` tahu tentang `Object B`, terdiri dari `Object B`, dan manage `Object B` lifecycle. `Class A` depands pada `class B`.
+- <b>Implementation</b>: `Class A` mendefinisikan method yang dideklarasikan dalam `Interface B`. `Object A` dapat diperlakukan sebagai B. `Class A` depands pada `class B`.
+- <b>Inheritance</b>: `Class A` mewarisi interface dan implementasi dari `Class B` tetapi bisa mengembangkannya.
+  `Object A` dapat diperlakukan sebagai B. `Class A` depands pada `class B`.
+
+![Relationship Between Objects](./assets/relationship-between-objects.png)
