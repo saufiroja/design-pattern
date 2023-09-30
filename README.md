@@ -20,8 +20,11 @@ Ini adalah repository untuk menyimpan hasil pembelajaran tentang design patterns
     - [Composition](./oop/README.md#composition)
   - [Conclusion](./oop/README.md#conclusion)
 - INTRODUCTION DESIGN PATTERNS
-  - What is Design Patterns?
-  - Why i should learn Design Patterns?
+  - [What is Design Patterns?](./design-pattern/README.md#what-is-design-pattern)
+    - [What does the pattern consist of?](./design-pattern/README.md#what-does-the-pattern-consist-of)
+    - [Classification of patterns](./design-pattern/README.md#classification-of-patterns)
+    - [Who invented patterns?](./design-pattern/README.md#who-invented-patterns)
+  - [Why use Design Patterns?](./design-pattern/README.md#why-use-design-patterns)
 - SOFTWARE DESIGN PRINCIPLES
   - Features of Good Design
     - Design Principles
